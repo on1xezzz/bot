@@ -177,7 +177,7 @@ def main():
             updates = get_updates(OFFSET)
             process_commands(updates)
             if AUTO_POSTING and is_within_trading_hours():
-                if counter >= 5:
+                if counter >= 10:
                     signal, signal_text, pair = generate_signal()  # ← ДОБАВЛЕНО: получаем пару
                     send_pre_signal_warning(pair)  # ← ДОБАВЛЕНО
                     time.sleep(30)  # ← ДОБАВЛЕНО
